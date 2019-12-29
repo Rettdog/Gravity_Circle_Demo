@@ -36,6 +36,12 @@ public class Arrow extends Object{
 			yPull += yList[i];
 		}
 		angle = Math.atan(yPull/xPull);
+		if(angle<0&&yPull>0) {
+			angle+=Math.PI;
+		}
+		if(angle>0&&yPull<0) {
+			angle+=Math.PI;
+		}
 		setArrowTipLength();
 		setArrowAngleDifference();
 		setArrowPoints();
